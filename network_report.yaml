@@ -1,0 +1,19 @@
+---
+- name: Convert interface info to structured data
+  hosts: routers
+  gather_facts: no
+
+  tasks:
+    - name: load read interfaces role
+      include_role:
+        name: read_interfaces
+
+- name: Build report with facts
+  hosts: tower
+  gather_facts: no
+
+  tasks:
+
+    - name: build report
+      include_role:
+        name: build_report

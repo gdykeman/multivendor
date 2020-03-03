@@ -1,0 +1,12 @@
+---
+- name: Set router banners
+  hosts: cisco,juniper
+  gather_facts: no
+
+  tasks:
+    - name: Load banner onto network device(s)
+      vars:
+        - network_banner:  "{{ net_banner | default(None) }}"
+        - banner_type: "{{ net_type | default('login') }}"
+      include_role:
+        name: banner

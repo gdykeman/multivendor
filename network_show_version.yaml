@@ -1,0 +1,10 @@
+---
+- name: Show Version
+  hosts: cisco,arista
+  gather_facts: no
+
+  tasks:
+    - name: Run Show Ver
+      cli_command:
+        command: show version
+      register: output
