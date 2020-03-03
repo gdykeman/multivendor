@@ -1,0 +1,14 @@
+---
+- name: Show Version
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    - name: show command
+      cli_command:
+        command: "{{ tower_input | default('')}}"
+      when: ansible_network_os is defined
+      register: output
+
+    - debug:
+        msg: "{{ output.stdout_lines }}"
