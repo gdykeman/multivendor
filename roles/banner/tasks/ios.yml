@@ -1,5 +1,14 @@
 ---
+- name: gather facts
+  ios_facts:
+
 - name: ADD THE IOS BANNER
   ios_banner:
     text: "{{ network_banner }}"
-    banner: "{{ banner_type }}"
+    banner: login
+    
+- name: CONFIGURE THE MOTD
+  ios_banner:
+    banner: motd
+    text: "{{ lookup('template', 'motd.j2') }}"
+    state: present

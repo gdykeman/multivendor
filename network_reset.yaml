@@ -1,0 +1,15 @@
+---
+- name: Reset router banners
+  hosts: cisco
+  gather_facts: no
+
+  tasks:
+    - name: reset login banner
+      ios_banner:
+        banner: login
+        state: absent
+        
+    - name: reset motd banner
+      ios_banner:
+        banner: motd
+        state: absent

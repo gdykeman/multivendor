@@ -1,0 +1,11 @@
+---
+- name: JUNOS MODULE TO SET SYSTEM CONFIGS
+  hosts: juniper
+  gather_facts: no
+
+  tasks:
+    - debug:
+        var: ansible_connection
+    - name: GATHER FACTS
+      junos_facts:
+        gather_subset: min
