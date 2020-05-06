@@ -49,7 +49,7 @@
             - gdykeman-prod-network-student1-rtr3
             - gdykeman-prod-network-student1-rtr4
             - gdykeman-prod-Tower
-            - gdykeman-prod-Tower
+            - gdykeman-snow-router
         subnet: subnet-0da3f8a40fc0a0fb7
         region: us-east-2
       #core_network
