@@ -1,0 +1,90 @@
+---
+- name: Control AWS Instances
+  hosts: localhost
+  gather_facts: no
+
+  vars:
+    aws_nodes:
+      #dmvpn1_nodes
+      dmvpn1:
+        nodes:
+          - DMVPN-student1-rtr1
+          - DMVPN-student1-rtr3
+        subnet: subnet-03ac87faaaf7f0c08
+        region: us-east-1
+
+      #dmvpn2_nodes
+      dmvpn2: 
+        nodes:
+          - DMVPN-student1-rtr2
+          - DMVPN-student1-rtr4
+        subnet: subnet-07efb1207d9524b21
+        region: us-east-1
+
+      #caretaker_nodes
+      caretaker:
+        nodes:
+          - site1-core1
+          - site1-remote1
+          - site2-core2
+          - site2-remote2
+        subnet: subnet-0eee89ca59eff24dc
+        region: us-east-1
+
+      #dev_env_nodes
+      dev:
+        nodes:
+          - gdykeman-dev-network-student1-rtr1
+          - gdykeman-dev-network-student1-rtr2
+          - gdykeman-dev-network-student1-rtr3
+          - gdykeman-dev-network-student1-rtr4
+        subnet: subnet-0785c67615fdeeb0b
+        region: us-east-2
+
+      #prod_env_nodes
+      prod:
+        nodes:
+            - gdykeman-prod-network-student1-rtr1
+            - gdykeman-prod-network-student1-rtr2
+            - gdykeman-prod-network-student1-rtr3
+            - gdykeman-prod-network-student1-rtr4
+            - gdykeman-prod-Tower
+            - gdykeman-prod-Tower
+        subnet: subnet-0da3f8a40fc0a0fb7
+        region: us-east-2
+      #core_network
+      demo1:
+        nodes:
+          - SEANGERALD-student1-rtr1
+          - SEANGERALD-student1-rtr3
+        subnet: subnet-2546316f
+        region: us-east-1
+      demo2:
+        nodes:
+          - SEANGERALD-student1-rtr2
+          - SEANGERALD-student1-rtr4
+        subnet: subnet-3141367b
+        region: us-east-1
+
+  tasks:
+    - name: Start AWS Instances
+      ec2:
+        region: "{{ item.value.region }}"
+        vpc_subnet_id: "{{item.value.subnet}}"
+        instance_tags:
+          Name: "{{item.value.nodes}}"
+        state: running
+      loop: "{{ lookup('dict', aws_nodes) }}"
+      tags:
+        - start_nodes
+
+    - name: Stop AWS Instances
+      ec2:
+        region: "{{ item.value.region }}"
+        vpc_subnet_id: "{{item.value.subnet}}"
+        instance_tags:
+          Name: "{{item.value.nodes}}"
+        state: stopped
+      loop: "{{ lookup('dict', aws_nodes) }}"
+      tags:
+        - stop_nodes
