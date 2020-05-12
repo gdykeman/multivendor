@@ -22,14 +22,14 @@
         region: us-east-1
 
       #caretaker_nodes
-      caretaker:
-        nodes:
-          - site1-core1
-          - site1-remote1
-          - site2-core2
-          - site2-remote2
-        subnet: subnet-0eee89ca59eff24dc
-        region: us-east-1
+      # caretaker:
+      #   nodes:
+      #     - site1-core1
+      #     - site1-remote1
+      #     - site2-core2
+      #     - site2-remote2
+      #   subnet: subnet-0eee89ca59eff24dc
+      #   region: us-east-1
 
       #dev_env_nodes
       dev:
