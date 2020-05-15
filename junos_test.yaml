@@ -4,8 +4,7 @@
   gather_facts: no
 
   tasks:
-    - debug:
-        var: ansible_connection
     - name: GATHER FACTS
       junos_facts:
         gather_subset: min
+        gather_network_resources: 'interfaces,l3_interfaces'
