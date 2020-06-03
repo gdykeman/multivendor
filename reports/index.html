@@ -182,7 +182,7 @@ dhcp
             <td>network_cli</td>
             <td>Arista eos</td>
             <td>4.22.1FX-VEOSRouter-cloud</td>
-            <td>F6370823AA165AA54A22DAE4432EB3A2</td>
+            <td>B70292B9904DC52255462261DD08780C</td>
         </tr>
         <tr>
             <td><p class="hostname">Arista2</p>
@@ -299,7 +299,7 @@ dhcp
             <td>network_cli</td>
             <td>Arista eos</td>
             <td>4.22.1FX-VEOSRouter-cloud</td>
-            <td>A3CA875CEAC8748CC4803EBDEC2AEDFD</td>
+            <td>98E44B44ADBE798B05B979340B52EAB7</td>
         </tr>
         <tr>
             <td><p class="hostname">Cisco</p>
@@ -321,6 +321,14 @@ dhcp
     </thead>
     <tbody>
         <tr>
+            <td>loopback0</td>
+            <td>none</td>
+            <td>default</td>
+            <td>True</td>
+            <td>default</td>
+            <td>default</td>
+        </tr>
+        <tr>
             <td>GigabitEthernet1</td>
             <td>none</td>
             <td>default</td>
@@ -347,6 +355,18 @@ dhcp
         </tr>
     </thead>
     <tbody>
+        <tr>
+            <td>loopback0</td>
+<!–– INTERNAL IPv4 LOOP FOR L3_INTERFACES --!>
+            <td>
+192.168.1.1 255.255.255.255
+            </td>
+<!–– END IPv4 INTERNAL LOOP FOR L3_INTERFACES --!>
+<!–– INTERNAL IPv6 LOOP FOR L3_INTERFACES --!>
+            <td>
+            </td>
+<!–– END INTERNAL LOOP FOR L3_INTERFACES --!>
+        </tr>
         <tr>
             <td>GigabitEthernet1</td>
 <!–– INTERNAL IPv4 LOOP FOR L3_INTERFACES --!>
@@ -368,104 +388,7 @@ dhcp
             <td>network_cli</td>
             <td>Cisco ios</td>
             <td>16.09.02</td>
-            <td>9U9D2V369UE</td>
-        </tr>
-        <tr>
-            <td><p class="hostname">Juniper</p>
-<!–– INTERNAL TABLE FOR INTERFACES --!>
-<div class="expand">
-  <p class="expandclass">>Interfaces Facts - Click to see details</p>
-</div>
-<div class="content">
-<table id="subtable">
-    <thead>
-        <tr>
-            <th>Interface Name</th>
-            <th>Description</th>
-            <th>Duplex</th>
-            <th>Enabled</th>
-            <th>MTU</th>
-            <th>Speed</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>gr-0/0/0</td>
-            <td>none</td>
-            <td>default</td>
-            <td>True</td>
-            <td>default</td>
-            <td>default</td>
-        </tr>
-        <tr>
-            <td>lo0</td>
-            <td>none</td>
-            <td>default</td>
-            <td>True</td>
-            <td>default</td>
-            <td>default</td>
-        </tr>
-        <tr>
-            <td>fxp0</td>
-            <td>none</td>
-            <td>default</td>
-            <td>True</td>
-            <td>default</td>
-            <td>default</td>
-        </tr>
-    </tbody>
-</table>
-</div>
-</div>
-<!–– END INTERNAL TABLE FOR INTERFACES --!>
-<!–– INTERNAL TABLE FOR L3_INTERFACES --!>
-<div class="expand">
-  <p class="expandclass">>Interfaces L3 Facts - Click to see details</p>
-</div>
-<div class="content">
-<table id="subtable">
-    <thead>
-        <tr>
-            <th>Interface Name</th>
-            <th>IPv4</th>
-            <th>IPv6</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>gr-0/0/0</td>
-<!–– INTERNAL IPv4 LOOP FOR L3_INTERFACES --!>
-            <td>
-10.100.100.2/24
-            </td>
-<!–– END IPv4 INTERNAL LOOP FOR L3_INTERFACES --!>
-<!–– INTERNAL IPv6 LOOP FOR L3_INTERFACES --!>
-            <td>
-            </td>
-<!–– END INTERNAL LOOP FOR L3_INTERFACES --!>
-        </tr>
-        <tr>
-            <td>lo0</td>
-<!–– INTERNAL IPv4 LOOP FOR L3_INTERFACES --!>
-            <td>
-192.168.3.3/32
-            </td>
-<!–– END IPv4 INTERNAL LOOP FOR L3_INTERFACES --!>
-<!–– INTERNAL IPv6 LOOP FOR L3_INTERFACES --!>
-            <td>
-            </td>
-<!–– END INTERNAL LOOP FOR L3_INTERFACES --!>
-        </tr>
-    </tbody>
-</table>
-</div>
-</div>
- <!–– END INTERNAL TABLE FOR L3_INTERFACES --!>
-            </td>
-            <td>netconf</td>
-            <td>Juniper junos</td>
-            <td>18.4R1.8</td>
-            <td>96ff037aa90c</td>
+            <td>9N74GJXNW2N</td>
         </tr>
     </tbody>
 </table>
@@ -477,6 +400,6 @@ If you are new to Ansible Automation check out the following links:<br>
 <a href="https://youtube.com/ansibleautomation">Youtube Videos</a><br>
 </p>
 </center>
-<footer> Reported generated on: 2020-04-13 @ 11:18:12 </footer>
+<footer> Reported generated on: 2020-05-15 @ 13:08:03 </footer>
 </body>
 </html>
