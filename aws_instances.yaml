@@ -21,15 +21,20 @@
         subnet: subnet-07efb1207d9524b21
         region: us-east-1
 
-      #caretaker_nodes
-      # caretaker:
-      #   nodes:
-      #     - site1-core1
-      #     - site1-remote1
-      #     - site2-core2
-      #     - site2-remote2
-      #   subnet: subnet-0eee89ca59eff24dc
-      #   region: us-east-1
+      #Service Now Integration
+      snow:
+        nodes:
+          - gdykeman-snow-router
+        subnet: subnet-0ccec75ff9bc511e0
+        region: us-east-2
+
+      #Splunk Integrations
+      splunk:
+        nodes:
+          - gdykeman-splunk
+          - gdykeman-splunk-forwarder
+        subnet: subnet-0906c1e303cadfbd1
+        region: us-east-2
 
       #dev_env_nodes
       dev:
@@ -51,6 +56,7 @@
             - gdykeman-snow-router
         subnet: subnet-0da3f8a40fc0a0fb7
         region: us-east-2
+
       #core_network
       demo1:
         nodes:
@@ -87,3 +93,14 @@
       loop: "{{ lookup('dict', aws_nodes) }}"
       tags:
         - stop_nodes
+
+
+      #caretaker_nodes
+      # caretaker:
+      #   nodes:
+      #     - site1-core1
+      #     - site1-remote1
+      #     - site2-core2
+      #     - site2-remote2
+      #   subnet: subnet-0eee89ca59eff24dc
+      #   region: us-east-1
