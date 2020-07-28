@@ -43,9 +43,6 @@
           - gdykeman-dev-network-student1-rtr2
           - gdykeman-dev-network-student1-rtr3
           - gdykeman-dev-network-student1-rtr4
-          - gdykeman-master
-          - gdykeman-worker1
-          - gdykeman-worker2
         subnet: subnet-0785c67615fdeeb0b
         region: us-east-2
 
