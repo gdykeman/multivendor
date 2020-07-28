@@ -20,6 +20,13 @@
         > *Restart Splunk if not active*  
         > *`./splunk restart`*
 
+<!-- 
+sudo su -
+cd /opt/splunkforwarder/bin
+./splunk start
+
+-->
+
 - Splunk UI
     - *`{{ server_ip }}:8000`*
         > login {{instance-id}} == AWS instance id:  
