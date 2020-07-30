@@ -2,6 +2,9 @@
 - hosts: localhost
   gather_facts: no
 
+  vars_files:
+    - vault.yaml
+
   tasks:
     - debug:
         var: vault_password
