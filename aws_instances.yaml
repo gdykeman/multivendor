@@ -20,6 +20,13 @@
           - DMVPN-student1-rtr4
         subnet: subnet-07efb1207d9524b21
         region: us-east-1
+      
+      #Credential_demo
+      credential:
+        nodes:
+          - gdykeman-credential-demo
+        subnet: subnet-0906c1e303cadfbd1
+        region: us-east-2
 
       #Service Now Integration
       snow:
